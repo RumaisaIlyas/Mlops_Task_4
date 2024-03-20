@@ -205,48 +205,6 @@ column_name = 'previous'
 df = remove_outliers_iqr(df, column_name)
 plot_outliers_scatter(df, column_name)
 
-"""Detecting Ouliers using Z-Score"""
-
-def detect_outliers_zscore(data, column_name, threshold=3):
-    z_scores = np.abs((data[column_name] - data[column_name].mean()) / data[column_name].std())
-    outliers_indices = np.where(z_scores > threshold)[0]
-    num_outliers = len(outliers_indices)
-    return num_outliers, outliers_indices
-
-def remove_outliers_zscore(data, column_name, threshold=3):
-    z_scores = np.abs((data[column_name] - data[column_name].mean()) / data[column_name].std())
-    outliers_indices = np.where(z_scores > threshold)[0]
-    data_no_outliers = data.drop(outliers_indices)
-    return data_no_outliers
-
-column_name = 'age'
-threshold = 3
-
-# Detect outliers
-num_outliers, outliers_indices = detect_outliers_zscore(df_original, column_name, threshold)
-print("Number of outliers in column '{}': {}".format(column_name, num_outliers))
-print("Indices of outliers:", outliers_indices)
-
-# Remove outliers
-df_no_outliers = remove_outliers_zscore(df_original, column_name, threshold)
-
-plot_outliers_scatter(df_no_outliers, column_name)
-
-column_name = 'balance'
-threshold = 3
-
-# Detect outliers
-num_outliers, outliers_indices = detect_outliers_zscore(df_original, column_name, threshold)
-print("Number of outliers in column '{}': {}".format(column_name, num_outliers))
-print("Indices of outliers:", outliers_indices)
-
-# Remove outliers
-df_no_outliers = remove_outliers_zscore(df_original, column_name, threshold)
-
-plot_outliers_scatter(df_no_outliers, column_name)
-
-"""By only checking ouliers of two features by Z-Score, it shows that IQR was a good option.
-
 # Data Visualization
 """
 
