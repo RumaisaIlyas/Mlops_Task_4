@@ -7,6 +7,9 @@
 
 # Run Successfully
 
+<img width="914" alt="image" src="https://github.com/RumaisaIlyas/Mlops_Task_4/assets/119864397/60aad97e-dab7-49ad-b70d-72b341fdae6b">
+
+
 <img width="940" alt="image" src="https://github.com/RumaisaIlyas/Mlops_Task_4/assets/119864397/204aa7d0-cf9b-470a-b931-8623fc7386e3">
 
 
